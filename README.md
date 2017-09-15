@@ -1,6 +1,6 @@
 
 
-# Deep-Learning-Methods-in-Predicting-the-Movements-of-Stock-Prices.
+# Sentiment Analysis of Financial News in Predicting the Movements of Stock Prices.
 
 The current status of this project is to use Natural Language Processing to predict the trends of stock markets. This project starts from fetching the ticker symbols and financial news from NASDAQ and Reuters, then we convert the words in each sentence by applying the GloVe representations, proposed by . The last but not least, we adpot the convolutional neural network proposed by Yoon Kim to build the forecasting models to predict the movements of stock prices. 
 
