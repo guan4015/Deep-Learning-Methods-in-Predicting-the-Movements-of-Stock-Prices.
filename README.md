@@ -61,12 +61,12 @@ FeatureMatrix.py
 
 ## Model Deployment
 
-In this part, we apply the structure proposed by [Yoon Kim](http://www.people.fas.harvard.edu/~yoonkim/data/sent-cnn.pdf). The model has only two layers, the convolutional layer which consist of 64 $2 \times 100$ filters. The current model is built upon Keras under the TensorFlow backend. The TensorFlow version will be posted later.
+In this part, we apply the structure proposed by [Yoon Kim](http://www.people.fas.harvard.edu/~yoonkim/data/sent-cnn.pdf). The model has only two layers, in which the convolutional layer consisting of 64 filters with size 2 by 100. The current model is built upon Keras under the TensorFlow backend. The TensorFlow version will be posted later. For simple test, just run the following codes.
 
-'''
+```
 CnnModel.py
-'''
-
+```
+If you are fortunate, the test error will only be 20%. However, the precision will be around 62%.
 
 
 ## Contributing
