@@ -28,57 +28,58 @@ Say what the step will be
 fetch_news.py
 ```
 
-And repeat
+### Stock Prices Download
+
+For each ticker that contains news up to N days before, we record their ticker symbols and create a list. Next, we acquire the stock prices data associated with each ticker up to N days before. Then these information will be stored in a json file, which behaves similar to a NoSQL. The execuation of the following file will produces the stock prices files.
 
 ```
-until finished
+fetch_stock_data.py
 ```
+For the reason that the direct download of stock prices data suffer a url issue. We utilize the pandas datareader to achieve this task. 
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
+## Words Representations and Feature Matrices
 
-Explain how to run the automated tests for this system
+In this section, we explain how to convert words into features/proper representations and obtain the feature matrix.
 
-### Break down into end to end tests
+### Word Representations
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
+In this project, we adopted the models proposed by Jeffrey Pennington et al to obtain the word representations. More specifically, we used the pre-trained word vectors "glove6B100d.txt" to acquire the representations. If you prefer to use your own corpus, you are encouraged to refer to the following codes.
 
 ```
-Give an example
+WordEmbedding.py
 ```
 
-## Deployment
+### Feature Matrices Generation
 
-Add additional notes about how to deploy this on a live system
+Once we have words representations on hand, then it is time to generate feature matrices. In this part, we traverse each word in one sentence and convert them into a matrx. Then these matrices will be horizontally stacked to form a series of tensors, which will be the input of the models.
 
-## Built With
+```
+FeatureMatrix.py
+```
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+## Model Deployment
+
+In this part, we apply the structure proposed by [Yoon Kim](http://www.people.fas.harvard.edu/~yoonkim/data/sent-cnn.pdf). The model has only two layers, the convolutional layer which consist of 64 2$\times$100 filters. The current model is built upon Keras under the TensorFlow backend. The TensorFlow version will be posted later.
+
+'''
+CnnModel.py
+'''
+
+
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please contact me [CONTRIBUTING.md](xg720@nyu.edu) for and the process for submitting pull requests to me.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/guan4015/Deep-Learning-Methods-in-Predicting-the-Movements-of-Stock-Prices). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Xiao Guan**  
 
 ## License
 
@@ -86,6 +87,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+
