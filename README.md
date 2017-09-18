@@ -20,9 +20,7 @@ ticker_sracpy.py
 
 ### News Fetching
 
-The next step is to fetch the stock news. This process is done by creating the link to Reuters. For all the companies recorded in the "tickerList.csv" file, we fetch the news corresponding to each ticker symbol up to N days. If there is no news in the current date, we just skip it. It then creates a another .csv file to record the news title and news contents as well as the class given by Reuters. At present, there are only two classes: "top story" and "normal". Basically, we only focus on the top news in building the prediction models. The retrieval of the news can be done in the following .py file
-
-Say what the step will be
+The next step is to fetch the stock news. This process is done by creating the link to Reuters. For all the companies recorded in the "tickerList.csv" file, we fetch the news corresponding to each ticker symbol up to N days. If there is no news in the current date, we just skip it. It then creates a another .csv file to record the news title and news contents as well as the class given by Reuters. At present, there are only two classes: "top story" and "normal". Basically, we only focus on the top news in building the prediction models. The retrieval of the news can be done in the following .py file.
 
 ```
 fetch_news.py
@@ -36,8 +34,6 @@ For each ticker that contains news up to N days before, we record their ticker s
 fetch_stock_data.py
 ```
 For the reason that the direct download of stock prices data suffer a url issue. We utilize the pandas datareader to achieve this task. 
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Words Representations and Feature Matrices
 
@@ -53,10 +49,10 @@ WordEmbedding.py
 
 ### Feature Matrices Generation
 
-Once we have words representations on hand, then it is time to generate feature matrices. In this part, we traverse each word in one sentence and convert them into a matrx. Then these matrices will be horizontally stacked to form a series of tensors, which will be the input of the models.
+Once we have words representations on hand, then it is time to generate feature matrices. In this part, we traverse each word in one sentence and convert them into a matrx. Then these matrices will be horizontally stacked to form a series of tensors, which will be the input of the models. In addition to word represntations, we have to label the data, this is done by calculating the stock returns over 1 day corresponding to the next news day. If the the prices goes up, we label the news to be positive, and if the prices goes down, we label the news as negative. 
 
 ```
-FeatureMatrix.py
+StockReturns.py, FeatureMatrix.py
 ```
 
 ## Model Deployment
