@@ -61,7 +61,7 @@ FeatureMatrix.py
 
 ## Model Deployment
 
-In this part, we apply the structure proposed by [Yoon Kim](http://www.people.fas.harvard.edu/~yoonkim/data/sent-cnn.pdf). The model has only two layers, the convolutional layer which consist of 64 2$\times$100 filters. The current model is built upon Keras under the TensorFlow backend. The TensorFlow version will be posted later.
+In this part, we apply the structure proposed by [Yoon Kim](http://www.people.fas.harvard.edu/~yoonkim/data/sent-cnn.pdf). The model has only two layers, the convolutional layer which consist of 64 $2 \times 100$ filters. The current model is built upon Keras under the TensorFlow backend. The TensorFlow version will be posted later.
 
 '''
 CnnModel.py
