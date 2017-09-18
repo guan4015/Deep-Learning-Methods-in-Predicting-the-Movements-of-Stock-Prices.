@@ -6,26 +6,26 @@ The current status of this project is to use Natural Language Processing to pred
 
 
 
-## Getting Started
+## Data Fetching and Cleaning
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+We start from the data fetching process.
 
-### Prerequisites
+### Ticker Symbol Fetching
 
-What things you need to install the software and how to install them
+In this section, we scrape the data from NASDAQ, which contains the information of ticker, company name, lastSale, Market Capital, IPO year, sector and industry. Then these information is stored in the file "./input/tickerList.csv". The python codes are wrapped in the following file
 
 ```
-Give examples
+ticker_sracpy.py
 ```
 
-### Installing
+### News Fetching
 
-A step by step series of examples that tell you have to get a development env running
+The next step is to fetch the stock news. This process is done by creating the link to Reuters. For all the companies recorded in the "tickerList.csv" file, we fetch the news corresponding to each ticker symbol up to N days. If there is no news in the current date, we just skip it. It then creates a another .csv file to record the news title and news contents as well as the class given by Reuters. At present, there are only two classes: "top story" and "normal". Basically, we only focus on the top news in building the prediction models. The retrieval of the news can be done in the following .py file
 
 Say what the step will be
 
 ```
-Give the example
+fetch_news.py
 ```
 
 And repeat
