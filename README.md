@@ -64,14 +64,7 @@ CnnModel.py
 ```
 If you are fortunate, the test error will only be 20%. However, the precision will be around 62%.
 
-
-## Contributing
-
-Please contact me [CONTRIBUTING.md](xg720@nyu.edu) for and the process for submitting pull requests to me.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/guan4015/Deep-Learning-Methods-in-Predicting-the-Movements-of-Stock-Prices). 
+ 
 
 ## Authors
 
